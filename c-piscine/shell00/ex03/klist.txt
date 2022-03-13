@@ -1,0 +1,5 @@
+Credentials cache: API:89850C09-5C31-4322-B1FC-A7CEA7EF9B6A
+        Principal: hwichoi@42SEOUL.KR
+
+  Issued                Expires             Flags    Principal
+Jan 31 16:06:05 2022  Feb  1 02:06:05 2022  FPRIA  krbtgt/42SEOUL.KR@42SEOUL.KR
