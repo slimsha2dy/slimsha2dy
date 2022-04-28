@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwichoi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 16:33:51 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/03/14 17:21:49 by hwichoi          ###   ########.fr       */
+/*   Created: 2022/04/28 21:23:42 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/28 21:23:47 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	**alloc_split(char const *s, char c)
+static char	**alloc_split(char const *s, char c)
 {
 	int		i;
 	char	**buf;
@@ -32,7 +32,7 @@ char	**alloc_split(char const *s, char c)
 	return (buf);
 }
 
-char	*alc_cpy(char const *s, int size)
+static char	*alc_cpy(char const *s, int size)
 {
 	char	*buf;
 	int		i;

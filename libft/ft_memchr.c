@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 21:21:46 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:21:52 by hwichoi          ###   ########.fr       */
+/*   Created: 2022/04/28 21:23:00 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/28 21:23:07 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include "libft.h"
+
+void	*ft_memchr(const void *b, int c, size_t len)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
+	unsigned char	*cb;
+	unsigned char	to_find;
+	size_t			cnt;
+
+	cb = (unsigned char *)b;
+	to_find = (unsigned char)c;
+	cnt = 0;
+	while (cnt < len)
+	{
+		if (cb[cnt] == to_find)
+			return ((void *)&cb[cnt]);
+		cnt++;
+	}
 	return (0);
 }

@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 01:00:59 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/03/14 01:10:34 by jfruscia         ###   ########.fr       */
+/*   Created: 2022/04/28 21:24:02 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/28 21:24:05 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(char const *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != 0)
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

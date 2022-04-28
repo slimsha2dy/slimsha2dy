@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hwichoi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 17:22:12 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/03/14 17:53:52 by hwichoi          ###   ########.fr       */
+/*   Created: 2022/04/28 21:22:22 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/28 21:22:39 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	dig_size(int n, int minus)
+static int	dig_size(int n, int minus)
 {
 	int	dig;
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jfrusciante <marvin@42.fr>                 +#+  +:+       +#+        */
+/*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 01:12:07 by jfruscia          #+#    #+#             */
-/*   Updated: 2022/03/14 01:27:03 by jfruscia         ###   ########.fr       */
+/*   Created: 2022/04/28 21:24:50 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/28 21:24:53 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	is_init(char c, char const *set)
+static int	is_init(char c, char const *set)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			size++;
 	}
 	buf = (char *)malloc(sizeof(char) * (size + 1));
-	if (buf == 0)
+	if (*buf == 0)
 		return (0);
 	i1 = -1;
 	i2 = 0;
