@@ -6,7 +6,7 @@
 /*   By: hwichoi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:46:04 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:00:26 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/28 21:50:57 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *str);
 void	*ft_bzero(void *b, size_t len);
