@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:23:42 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:23:47 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 16:35:46 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	**alloc_split(char const *s, char c)
 			size++;
 	}
 	buf = (char **)malloc(sizeof(char *) * (size + 1));
-	if (*buf == 0)
+	if (buf == 0)
 		return (0);
 	buf[size] = 0;
 	return (buf);
@@ -38,11 +38,12 @@ static char	*alc_cpy(char const *s, int size)
 	int		i;
 
 	buf = (char *)malloc(sizeof(char) * (size + 1));
-	if (*buf == 0)
+	if (buf == 0)
 		return (0);
 	i = -1;
 	while (++i < size)
 		buf[i] = s[i];
+	buf[i] = 0;
 	return (buf);
 }
 
@@ -59,15 +60,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	cnt = 0;
 	cpy = 0;
-	while (buf[i])
+	while (s[cnt])
 	{
 		while (s[cnt] == c && s[cnt++])
 			cpy++;
 		while (s[cnt] != c && s[cnt])
 			cnt++;
 		buf[i] = alc_cpy(&s[cpy], cnt - cpy);
-		if (buf[i] == 0)
+		if (buf == 0)
 			return (0);
+		cpy = cnt;
 		i++;
 	}
 	return (buf);

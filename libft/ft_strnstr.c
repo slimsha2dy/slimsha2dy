@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:24:38 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:24:42 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 15:42:48 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	l_len = ft_strlen(little);
 	b_len = ft_strlen(big);
-	if (b_len < l_len)
+	if (b_len < l_len || len < l_len)
 		return (0);
 	cnt = 0;
-	while (cnt < len)
+	while (cnt < (len - l_len) && cnt < b_len)
 	{
-		if (ft_memcmp(&big[cnt], little, l_len) == 0)
+		if (ft_strncmp(&big[cnt], little, l_len) == 0)
 			return ((char *)&big[cnt]);
 		cnt++;
 	}

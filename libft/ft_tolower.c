@@ -6,13 +6,11 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:25:10 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:25:13 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 13:02:35 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c = c - 'A' + 'a';

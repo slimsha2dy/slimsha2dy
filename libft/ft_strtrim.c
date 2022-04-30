@@ -6,50 +6,33 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:24:50 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:24:53 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 16:52:36 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_init(char c, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (c == set[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*buf;
-	int		i1;
-	int		i2;
-	int		size;
+	size_t	start;
+	size_t	end;
+	char	*ret;
 
-	size = 0;
-	i1 = 0;
-	while (s1[i1])
-	{
-		if (is_init(s1[i1++], set) == 0)
-			size++;
-	}
-	buf = (char *)malloc(sizeof(char) * (size + 1));
-	if (*buf == 0)
+	if (s1 == 0)
 		return (0);
-	i1 = -1;
-	i2 = 0;
-	while (s1[++i1])
-	{
-		if (is_init(s1[i1], set) == 0)
-			buf[i2++] = s1[i1];
-	}
-	buf[i2] = 0;
-	return (buf);
+	if (set == 0)
+		return (ft_strdup(s1));
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] != 0 && ft_strchr(set, s1[start]))
+		start++;
+	while (s1[end - 1] != 0 && ft_strchr(set, s1[end - 1]) && end > 0)
+		end--;
+	if (start > end)
+		return (ft_strdup(""));
+	ret = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (ret == 0)
+		return (0);
+	ft_strlcpy(ret, &s1[start], end - start + 1);
+	return (ret);
 }

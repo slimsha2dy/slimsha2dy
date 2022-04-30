@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mempcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 21:23:27 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:23:32 by hwichoi          ###   ########.fr       */
+/*   Created: 2022/04/30 11:17:39 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/30 15:44:31 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t len)
+static void	putnbr_recur(int n, int fd)
 {
-	size_t			cnt;
-	unsigned char	*c_dest;
-	unsigned char	*c_src;
+	if (n <= 0)
+		return ;
+	putnbr_recur(n / 10, fd);
+	write(fd, &"0123456789"[n % 10], 1);
+}
 
-	if (dest == 0 || src == 0)
-		return (0);
-	c_dest = (unsigned char *)dest;
-	c_dest = (unsigned char *)src;
-	while (cnt < len)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (fd < 0)
+		return ;
+	if (n == -2147483648)
 	{
-		*c_dest++ = *c_src;
-		cnt = cnt + sizeof(char);
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (c_dest);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n == 0)
+	{
+		write(fd, "0", 1);
+		return ;
+	}
+	putnbr_recur(n, fd);
 }

@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:20:38 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:20:49 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 15:34:20 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	return (num);
+	return (num * sign);
 }

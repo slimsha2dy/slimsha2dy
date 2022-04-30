@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:22:22 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:22:39 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 16:08:29 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ char	*ft_itoa(int n)
 	char	*buf;
 	int		minus;
 	int		size;
+	long	nbr;
 
-	if (n == -2147483648)
-		return ("-2147483648");
+	nbr = (long)n;
 	minus = 0;
-	if (n < 0)
+	if (nbr < 0)
 	{
-		n *= -1;
+		nbr *= -1;
 		minus = 1;
 	}
-	size = dig_size(n, minus);
+	size = dig_size(nbr, minus);
 	buf = (char *)malloc(sizeof(char) * (size + 1));
 	if (minus == 1)
 		buf[0] = '-';
 	buf[size] = 0;
-	if (n == 0)
+	if (nbr == 0)
 		buf[0] = '0';
-	while (n > 0)
+	while (nbr > 0)
 	{
-		buf[--size] = (n % 10) + '0';
-		n = n / 10;
+		buf[--size] = (nbr % 10) + '0';
+		nbr /= 10;
 	}
 	return (buf);
 }

@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/28 21:23:19 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/30 14:36:50 by hwichoi          ###   ########.fr       */
+/*   Created: 2022/04/28 21:23:27 by hwichoi           #+#    #+#             */
+/*   Updated: 2022/04/30 14:27:00 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memcpy(void *dest, const void *src, size_t len)
 {
-	unsigned char	*c_dest;
-	unsigned char	*c_src;
 	size_t			cnt;
+	unsigned char	*c_src;
+	unsigned char	*c_dest;
 
-	cnt = 0;
-	if (len == 0)
-		return (dest);
+	if (dest == 0 || src == 0)
+		return (0);
 	c_dest = (unsigned char *)dest;
 	c_src = (unsigned char *)src;
-	if (dest < src)
+	cnt = 0;
+	while (cnt < len)
 	{
-		while (++cnt <= len)
-			*c_dest++ = *c_src++;
-	}
-	else
-	{
-		c_dest += len - 1;
-		c_src += len - 1;
-		while (++cnt <= len)
-			*c_dest-- = *c_src--;
+		c_dest[cnt] = c_src[cnt];
+		cnt++;
 	}
 	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:24:17 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:24:21 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/04/30 14:41:24 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 	if (dstsize == 0)
 		return (srcsize);
 	i = 0;
-	while (i < (dstsize - 1))
+	while (i < (dstsize - 1) && src[i] != 0)
 	{
 		dest[i] = src[i];
 		i++;
