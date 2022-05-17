@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:37:42 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/28 21:43:46 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/05/17 21:33:47 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	int	i;
 
 	i = 0;
+	if (s == 0 || f == 0)
+		return ;
 	while (s[i])
 	{
 		f(i, &s[i]);

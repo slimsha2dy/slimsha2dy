@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 11:12:32 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/30 11:17:24 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/05/17 21:33:20 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (fd < 0)
+	if (fd < 0 || s == 0)
 		return ;
 	while (*s)
 		write(fd, s++, 1);

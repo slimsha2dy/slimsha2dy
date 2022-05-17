@@ -6,7 +6,7 @@
 /*   By: hwichoi <hwichoi@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 21:24:50 by hwichoi           #+#    #+#             */
-/*   Updated: 2022/04/30 16:52:36 by hwichoi          ###   ########.fr       */
+/*   Updated: 2022/05/17 22:01:11 by hwichoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (s1 == 0)
 		return (0);
-	if (set == 0)
+	if (set == 0 || *s1 == 0)
 		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] != 0 && ft_strchr(set, s1[start]))
 		start++;
-	while (s1[end - 1] != 0 && ft_strchr(set, s1[end - 1]) && end > 0)
+	while (end - 1 != 0 && ft_strchr(set, s1[end - 1]))
 		end--;
 	if (start > end)
 		return (ft_strdup(""));
